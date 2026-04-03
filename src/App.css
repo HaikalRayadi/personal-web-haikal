@@ -1,3 +1,27 @@
+/* =========================================
+   BASE STYLES BAWAAN VITE/REACT
+========================================= */
+
+/* MEMANGGIL FILE FONT DARI FOLDER PUBLIC */
+@font-face {
+  font-family: 'ClashDisplay-Bold';
+  src: url('/fonts/ClashDisplay-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-Light';
+  src: url('/fonts/ClashDisplay-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Memaksa elemen pakai font Light sebagai default */
+* {
+  font-family: 'ClashDisplay-Light', 'Inter', sans-serif;
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -181,4 +205,69 @@
     right: 0;
     border-right-color: var(--border);
   }
+}
+
+/* =========================================
+   CUSTOM STYLES UNTUK HERO SECTION
+========================================= */
+
+/* Warna saat teks DecryptedText masih acak (CYBER MINT) */
+.encrypted {
+  color: #b5ff6d;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 0 0 5px rgba(181, 255, 109, 0.4); /* Efek nyala tipis */
+}
+
+/* Warna saat teks DecryptedText sudah terbaca */
+.revealed {
+  color: #ffffff;
+  transition: color 0.5s ease;
+}
+
+/* Efek hover tombol (CYBER MINT) */
+.counter:hover {
+  background: #b5ff6d !important;
+  box-shadow: 0 0 20px rgba(181, 255, 109, 0.4) !important;
+  border-color: #b5ff6d !important;
+  color: #000000 !important; /* Teks hitam biar kontras elegan */
+}
+
+/* -----------------------------------------
+   PERBAIKAN TRUE FOCUS ("Haikal Rayadi")
+----------------------------------------- */
+
+/* Merapatkan jarak antara kata "Haikal" dan "Rayadi" */
+.true-focus-match > div {
+  display: flex !important;
+  justify-content: flex-start !important;
+  gap: 15px !important; 
+}
+
+/* =========================================
+   GAYA GRADASI MEWAH UNTUK TEKS "WEB DEVELOPER"
+========================================= */
+
+.text-gradient {
+  /* Gradasi dari Ungu ke Biru (Cosmic Blend) */
+  background: linear-gradient(90deg, #A855F7 0%, #3B82F6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
+
+/* =========================================
+   FIX KETEBALAN FONT MENGGUNAKAN FILE STATIC (.OTF)
+========================================= */
+
+/* Paksa elemen ini pakai font file BOLD */
+.font-bold-custom,
+.true-focus-match * {
+  font-family: 'ClashDisplay-Bold', sans-serif !important;
+}
+
+/* Paksa elemen ini pakai font file LIGHT */
+.font-light-custom {
+  font-family: 'ClashDisplay-Light', sans-serif !important;
 }
